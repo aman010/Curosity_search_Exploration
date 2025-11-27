@@ -1,0 +1,76 @@
+import numpy as np
+from gymnasium import spaces
+import time
+import os
+
+# Define the number of discrete actions available for the DRL agent to take.
+# These actions are:
+#   0 - Expand, Build Assimilators and Workers: Focuses on long-term economic development.
+#   1 - Build Stargate: Constructs a military building essential for creating air units.
+#   2 - Build Void Rays: Produces Void Rays, a powerful military air unit.
+#   3 - Attack with all Void Rays: Commands all available Void Rays to attack the enemy, potentially gaining rewards.
+#   4 - Build Pylon: Constructs Pylons, which are necessary for supplying and powering buildings and units.
+#   5 - Do nothing: Takes no action during this step, which can be strategic in certain scenarios.
+NUMBER_OF_ACTIONS = 6
+# constants.py
+mapName = "AbyssalReefLE"
+
+# Define the observation space of the environment that the DRL agent interacts with.
+# The elements in the observation space are:
+#   ProbeNum: The number of Probes (worker units).
+#   VRNum: The number of Void Rays (military air units).
+#   AttackingVRs: The number of Void Rays currently engaged in combat.
+#   NexusNum: The number of Nexuses (main base buildings).
+#   AssimilatorsNum: The number of Assimilators (gas harvesting structures).
+#   StargatesNum: The number of Stargates (air unit production buildings).
+#   PylonsNum: The number of Pylons (supply and power-providing structures).
+#   SupplyLeft: The amount of remaining supply capacity for building additional units.
+#   SecondsOfGame: The elapsed game time in seconds.
+OBSERVATION_SPACE_ARRAY = spaces.Box(low=0, high=255, shape=(224, 224, 3), dtype=np.uint8)
+
+# Defines an empty observation indicating the initial or reset state of the environment,
+# typically used at the start of a new episode.
+EMPTY_OBSERVATION = np.zeros((224, 224, 3), dtype=np.uint8)
+
+# Specifies the number of environments that are run in parallel during training.
+# Running multiple environments concurrently can significantly speed up training
+# by providing diverse experiences from multiple games.
+NUMBER_OF_CONCURRENT_EXECUTIONS = 5
+
+# Defines the number of timesteps for which the model is trained in each iteration.
+# A timestep generally represents a single decision-making step of the agent.
+TIMESTEPS = 10000
+
+# The total number of iterations to run the training. Each iteration consists of
+# training for the specified number of timesteps.
+NUMBER_OF_ITERATIONS = 100000
+
+# In constants.py
+BETA = 0.01          # Scaling factor for intrinsic reward
+ICM_LOSS_WEIGHT = 0.2 # Overall weight for the ICM loss in training
+ICM_ENCODER_DIM = 256 # Dimension of the feature vector
+# ... other constants
+
+# constants.py
+
+# StarCraft II Environment Constants (Placeholder values)
+NUMBER_OF_ACTIONS = 12  # Example: Number of discrete actions in your setup
+NUMBER_OF_CONCURRENT_EXECUTIONS = 1
+TIMESTEPS = 100000
+NUMBER_OF_ITERATIONS = 10
+
+# The observation space definition from your original code (assuming a Box space)
+import gymnasium as gym
+import numpy as np
+# Assuming the video's observation space of (224, 224, 3) 
+OBSERVATION_SPACE_ARRAY = gym.spaces.Box(low=0, high=255, shape=(224, 224, 3), dtype=np.uint8)
+
+# Intrinsic Curiosity Module (ICM) Constants
+BETA = 0.01          # Scaling factor for intrinsic reward (r_i)
+ICM_LOSS_WEIGHT = 0.2 # Weight for the Inverse Dynamics Loss (L_I)
+ICM_ENCODER_DIM = 256 # Dimension of the state feature vector (phi(s))
+ICM_LEARNING_RATE = 1e-4 # Separate learning rate for the ICM models
+model_name = f"{int(time.time())}"
+models_dir = f"models/{model_name}/"
+model_path = os.path.join(models_dir, "model.zip")
+

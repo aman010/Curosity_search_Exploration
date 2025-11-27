@@ -1,0 +1,12 @@
+,mean_agent1,mean_agent2,std_agent1,std_agent2,mean_gap,corr_t_t1_agent1,corr_t_t1_agent2
+Simple_approach/aguemted/multiagent_agumented_0.1-agent.csv,-43.90202486999321,,122.34637852698104,,,0.9979575053224861,
+Simple_approach/aguemted/multiagent_agumented_0.8-agent.csv,-118.8059992568257,,61.17221762970733,,,0.999960985122493,
+Simple_approach/Non_agumented/multi_agent_0.1_not_agumented_non_RND.csv,100.08299986892537,,153.59607900461168,,,0.9952969822219551,
+Simple_approach/Non_agumented/multi_agent_0.8_not_agumented_non_RND.csv,-192.79296530647372,,108.98299965193995,,,0.9999999937283095,
+feature_based/agumented/agumented_0.1_feature_based_with_action.csv,22.02343803098872,,24.806505672348056,,,0.9999970433953065,
+feature_based/agumented/agumented_0.8_feature_based_with_action.csv,-95.24496308594681,,52.7154461533126,,,0.9999999567139913,
+feature_based/non_agumented/episodie_scores_0.1_feature_based_with_action.csv,38.071335184998325,,47.12594982603346,,,0.9999814271176953,
+feature_based/non_agumented/episodie_scores_0.8_RND_with_action.csv,114.69836773187149,,396.1715681566345,,,0.9999996906580385,
+RND/agument_RND_multi_agent_0.1.csv,42.97042319511501,,58.675877111332625,,,0.9952500368546907,
+RND/agument_RND_multi_0.8-agent.csv,-109.73812659800566,,59.77157875565869,,,0.9977346354988255,
+RND/episodie_scores_0.1_RND.csv,53.226391551531975,,82.56663441382364,,,0.9956148339977333,

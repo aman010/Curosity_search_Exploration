@@ -1,0 +1,7 @@
+models
+__pycache__
+ppo_tensorboard
+ppo_tb*
+wandb
+results
+sc2env
