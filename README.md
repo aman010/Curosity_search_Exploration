@@ -1,3 +1,30 @@
+
+## Key Mechanisms and Implementation Details
+
+Our safety framework is built on two core risk metrics applied via a weighted penalty ($\mathbf{-\beta \times R_{\text{Total}}}$) to the final reward.
+
+1. Macro-Strategic Risk ($\mathbf{R_{MS}}$) - Value Uncertainty
+
+This component addresses the uncertainty of the game state itself, penalizing 50/50 fights.
+
+Metric: Derived from the Smoothed Advantage (Current Agent Value - Opponent Value).
+
+Smoothing: We use an Exponential Moving Average (EMA) on the instantaneous advantage to reduce noise and prevent overreaction to minor fluctuations. This ensures the risk signal is based on a reliable trend, not a single observation.
+
+Penalty: $\mathbf{R_{MS}}$ is highest when the Smoothed Advantage is near zero (an uncertain state) and lowest when the outcome is clear (decisive win or loss).
+
+2. Policy Divergence Risk ($\mathbf{R_{PD}}$) - Policy Uncertainty
+
+This component addresses the uncertainty of the agent's policy, which is crucial for safety.
+
+Metric: Calculated using the Policy Entropy (Shannon Entropy) of the action probability distribution.
+
+Goal: High entropy means the policy is "confused" and unsure of the best action.
+
+Penalty: $\mathbf{R_{PD}}$ is highest when the policy is uncertain (high entropy) and lowest when the policy is certain (low entropy). This drives the agent to quickly find and commit to confident, decisive actions.
+
+Combined Risk: The total macro-safety penalty is based on the maximum of the two risks, $\mathbf{R_{\text{Total}} = \max(R_{MS}, R_{PD})}$, ensuring the agent is penalized if either the game state or its own policy is unstable.
+
 | Experiment | Mean Agent 1 | Mean Agent 2 | Std Agent 1 | Std Agent 2 |
 |------------|--------------|--------------|-------------|-------------|
 | Simple_approach_augmented + Curiosity 0.1 | -43.902 | -64.785 | 122.346 | 100.005 |
@@ -11,3 +38,4 @@
 | RND_augmented + Curioisty 0.1 | 42.970 | 48.511 | 58.676 | 73.520 |
 | RND_augmented + Curosity 0.8 | -109.738 | -109.156 | 59.772 | 59.448 |
 | RND_non_augmented + Curosity 0.1 | 53.226 | 52.769 | 82.567 | 65.052 |
+
