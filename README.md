@@ -1,4 +1,4 @@
-The development of Curiosity-Driven Search has significantly advanced Reinforcement Learning, primarily by helping agents explore environments with sparse rewards. However, integrating safety into curiosity-driven search within Multi-Agent Environments (MARL) remains a critical challenge.This problem is highly relevant to areas like adversarial detection, where one agent attempts to deceive or "fool" another agent (e.g., via strategically misleading actions or "keywords") to gain a positional advantage. A truly robust agent must develop the best strategies not only to protect itself but also to build winning strategies that anticipate and overcome adversarial tactics.
+The development of Curiosity-Driven Search has significantly advanced Reinforcement Learning, primarily by helping agents explore environments with sparse rewards. However, integrating safety into curiosity-driven search within Multi-Agent Environments (MARL) remains a critical challenge.This problem is highly relevant to areas like adversarial detection, where one agent attempts to deceive or "fool" another agent (e.g., via strategically misleading actions or "keywords") to gain a positional advantage. A truly robust agent must develop the best strategies not only to protect itself but also to build winning strategies that anticipate and overcome adversarial tactics. In this approach we are using StarCraft (https://github.com/Blizzard/s2client-proto#downloads) environment in multiagent settings. Multiagents are limited to 2 agents only. 
 
 
 
@@ -28,6 +28,8 @@ Penalty: $\mathbf{R_{PD}}$ is highest when the policy is uncertain (high entropy
 
 Combined Risk: The total macro-safety penalty is based on the maximum of the two risks, $\mathbf{R_{\text{Total}} = \max(R_{MS}, R_{PD})}$, ensuring the agent is penalized if either the game state or its own policy is unstable.
 
+
+
 | Experiment | Mean Agent 1 | Mean Agent 2 | Std Agent 1 | Std Agent 2 |
 |------------|--------------|--------------|-------------|-------------|
 | Simple_approach_augmented + Curiosity 0.1 | -43.902 | -64.785 | 122.346 | 100.005 |
@@ -41,5 +43,11 @@ Combined Risk: The total macro-safety penalty is based on the maximum of the two
 | RND_augmented + Curioisty 0.1 | 42.970 | 48.511 | 58.676 | 73.520 |
 | RND_augmented + Curosity 0.8 | -109.738 | -109.156 | 59.772 | 59.448 |
 | RND_non_augmented + Curosity 0.1 | 53.226 | 52.769 | 82.567 | 65.052 |
+
+the above results are simple average of total rewards that agents gain Simple approach is simple Micro strategic approach in which curosity is just RMS, between the states of the agents, on the otherhand we have feature based approaches which take input as raw pixel features from CNN to the encoder provides the latent spaces. Feature based approach takes the latent representation norm difference as curosity metric, on the other hand RND is random network distillation (https://arxiv.org/abs/1810.12894) is the same approach the difference this has two different models, and the reward is the difference between the two. This approach looks for the novality between fixed network that randomly generate the states and the learning network that generate the states while learning. Although we have agumented the model randomly it gives us good and fast exploration in heuristics with Intrinsic weight as 0.1 but Intrinsic weight  0.8 its still challanging to keep the reward positive and well behaved . Despite that the game does not tie had limited number of iteration accross the episodes. 
+
+For Further explation we have added the video links of the worst and best performing model.
+
+
 
 
