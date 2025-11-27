@@ -48,6 +48,15 @@ the above results are simple average of total rewards that agents gain Simple ap
 
 For Further explation we have added the video links of the worst and best performing model.
 
+feature_based IW 0.8 part1 
+[![Video Thumbnail](https://img.youtube.com/vi/your_video_id/0.jpg)](https://www.youtube.com/watch?v=your_video_id)
+
+
+feature_based IW 0.8 part2 https://youtu.be/VGzWcycArTA
+RND IW 0.1 game tie https://youtu.be/nucPSTRG3Gc
+
+
+
 
 
 
