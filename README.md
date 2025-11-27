@@ -49,11 +49,12 @@ the above results are simple average of total rewards that agents gain Simple ap
 For Further explation we have added the video links of the worst and best performing model.
 
 feature_based IW 0.8 part1 
-[![Video Thumbnail](https://github.com/aman010/Curosity_search_Exploration/blob/main/Screenshot%20from%202025-11-27%2016-18-19.png)](https://www.youtube.com/watch?v=your_video_id)
+[![Video Thumbnail](https://github.com/aman010/Curosity_search_Exploration/blob/main/Screenshot%20from%202025-11-27%2016-18-19.png)](https://youtu.be/7ckeQ5Hxgc0)
 
 
 feature_based IW 0.8 part2 https://youtu.be/VGzWcycArTA
 RND IW 0.1 game tie https://youtu.be/nucPSTRG3Gc
+
 
 
 
