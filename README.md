@@ -1,5 +1,8 @@
+The development of Curiosity-Driven Search has significantly advanced Reinforcement Learning, primarily by helping agents explore environments with sparse rewards. However, integrating safety into curiosity-driven search within Multi-Agent Environments (MARL) remains a critical challenge.This problem is highly relevant to areas like adversarial detection, where one agent attempts to deceive or "fool" another agent (e.g., via strategically misleading actions or "keywords") to gain a positional advantage. A truly robust agent must develop the best strategies not only to protect itself but also to build winning strategies that anticipate and overcome adversarial tactics.
 
-## Key Mechanisms and Implementation Details
+
+
+## Key Novelty Mechanisms and Implementation Details
 
 Our safety framework is built on two core risk metrics applied via a weighted penalty ($\mathbf{-\beta \times R_{\text{Total}}}$) to the final reward.
 
@@ -38,4 +41,5 @@ Combined Risk: The total macro-safety penalty is based on the maximum of the two
 | RND_augmented + Curioisty 0.1 | 42.970 | 48.511 | 58.676 | 73.520 |
 | RND_augmented + Curosity 0.8 | -109.738 | -109.156 | 59.772 | 59.448 |
 | RND_non_augmented + Curosity 0.1 | 53.226 | 52.769 | 82.567 | 65.052 |
+
 
