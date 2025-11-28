@@ -58,7 +58,8 @@ For Further explation we have added the video links of the worst and best perfor
 [![Video Thumbnail](https://github.com/aman010/Curosity_search_Exploration/blob/main/Screenshot%20from%202025-11-27%2016-31-31.png)](https://youtu.be/18JGYhfXNbg)
 
 
-In the last game tie both the agents have maximum resourse consumption 
+In the last game tie both the agents have maximum resourse consumption contrast above two micro strategy diverges. 
+
 
 
 
